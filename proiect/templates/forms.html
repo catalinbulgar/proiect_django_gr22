@@ -9,6 +9,10 @@
             </div>
         {% endfor %}
     <button type="submit" class="btn btn-success">Salveaza</button>
+    {% if 'adaugare' in request.path %}
+        <a class="btn btn-info" href="{% url 'locations:lista_locatii' %}">Back</a>
+    {% endif %}
     </form>
     </div>
 {% endblock %}
+
