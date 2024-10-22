@@ -11,7 +11,7 @@ from locations.models import Location
 class CreateLocationView(LoginRequiredMixin, CreateView):
     model = Location
     template_name = 'forms.html'
-    # fields = ['city', 'country']
+    # fields = ["city", "country"]
     form_class = LocationsForm
 
     def get_form_kwargs(self):
@@ -31,8 +31,8 @@ class LocationView(LoginRequiredMixin, ListView):
 class UpdateLocationView(LoginRequiredMixin, UpdateView):
     model = Location
     # fields = ['city', 'country']
-    template_name = 'forms.html'
     form_class = LocationsForm
+    template_name = 'forms.html'
 
     def get_form_kwargs(self):
         data = super(UpdateLocationView, self).get_form_kwargs()

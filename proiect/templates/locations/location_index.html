@@ -17,11 +17,11 @@
                     <td>{{ forloop.counter }}</td>
                     <td>{{ item.city }}</td>
                     <td>{{ item.country }}</td>
-                    <td>{{ item.active }}</td>
-                    <td>{% if item.active is True %}
+                    <td>
+                        {% if item.active is True %}
                         Active
                         {% else %}
-                        Inactive
+                        Inactiv
                         {% endif %}
                     </td>
                     <td>
@@ -29,7 +29,7 @@
                         {% if item.active is True %}
                         <a class="btn btn-danger" href="{% url 'locations:dezactiveaza' item.id %}">Dezactiveaza</a>
                         {% else %}
-                        <a class="btn btn-danger" href="{% url 'locations:activeaza' item.id %}">Activeaza</a>
+                        <a class="btn btn-warning" href="{% url 'locations:activeaza' item.id %}">Activeaza</a>
                         {% endif %}
                     </td>
                 </tr>
